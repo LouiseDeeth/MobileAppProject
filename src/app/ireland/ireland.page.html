@@ -7,8 +7,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <ion-card [routerLink]="['/ireland-news']" routerDirection="forward">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200"></ion-img>
+    <ion-card-header>
+      <ion-card-title>News</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 
+  <ion-card [routerLink]="['/ireland-sports']" routerDirection="forward">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Sport</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  
 </ion-content>
 
 

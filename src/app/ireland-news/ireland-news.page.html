@@ -1,13 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>IrelandNews</ion-title>
+    <ion-title>Ireland News</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Ireland News</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
 </ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="home" class="tab-icon"></ion-icon>
+    </ion-tab-button>
+    
+    <ion-tab-button tab="ireland" routerLink="/ireland">
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200"></ion-img>
+    </ion-tab-button>
+    
+    <ion-tab-button tab="australia" routerLink="/australia">
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png"></ion-img>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

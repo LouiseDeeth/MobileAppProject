@@ -9,8 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, FormsModule, CommonModule, 
-    IonImg, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, RouterModule ],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, FormsModule, CommonModule, IonImg, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, RouterModule ],
 })
 
 export class HomePage implements OnInit{
