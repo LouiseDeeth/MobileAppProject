@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      News & Sport
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,19 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">News & Sport</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-img [routerLink]="['/ireland']" routerDirection="forward" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200">    
+    <br>
+    <strong [routerLink]="['/ireland']" routerDirection="forward">Ireland</strong>
+
+    <br><br><br>
+    <ion-img [routerLink]="['/australia']" routerDirection="forward" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png" width="200">    
+    <br>
+    <strong [routerLink]="['/australia']" routerDirection="forward">Australia</strong>
+
   </div>
 </ion-content>

@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ireland</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ireland</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+<h1>Weather in Galway</h1>
+{{weather[0].main}}, {{weather[0].description}}
+
