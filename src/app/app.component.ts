@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { IonApp, IonRouterOutlet, IonButtons } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { IrelandNewsService, IrelandSportService, AustraliaNewsService, AustraliaSportService } from './Services/data.service';
 
@@ -7,7 +7,7 @@ import { IrelandNewsService, IrelandSportService, AustraliaNewsService, Australi
   selector: 'app-root',
   templateUrl: 'app.component.html',
   standalone: true,
-  imports: [IonApp, IonRouterOutlet, CommonModule],
+  imports: [IonApp, IonRouterOutlet, CommonModule, IonButtons],
 })
 
 export class AppComponent implements OnInit{
