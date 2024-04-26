@@ -2,7 +2,9 @@ ion-title {
   text-align: center;
   font-size: 25px;
 }
-.tab-icon, ion-img {
+
+.tab-icon, ion-tab-button {
   max-width: 70px;
   max-height: 50px;
+  margin: 15px;
 }

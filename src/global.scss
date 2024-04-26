@@ -37,8 +37,12 @@
 @import '@ionic/angular/css/palettes/dark.system.css';
 
 ion-content {
-    --background: #0aabab; 
+    --background: #aae2f6; 
   }
+
+.ion-header {
+  --background: #8dc9c;
+}
 
   .tab-icon {
     color: #fff;

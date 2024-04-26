@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonTabs, IonTabButton, IonTabBar, IonButtons, IonBackButton, IonButton , IonIcon, IonImg} from '@ionic/angular/standalone';
-import { Router, RouterLink } from '@angular/router';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonTabs, 
+  IonTabButton, IonTabBar, IonButtons, IonBackButton, IonButton , IonImg} from '@ionic/angular/standalone';
+import { Router, RouterLinkWithHref } from '@angular/router';
+import {homeOutline} from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-ireland-news',
   templateUrl: './ireland-news.page.html',
   styleUrls: ['./ireland-news.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonTabs, IonTabButton, IonTabBar, CommonModule, FormsModule, IonButtons, IonBackButton, IonButton, IonIcon, IonImg]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonIcon, IonTabs,
+     IonTabButton, IonTabBar, CommonModule, FormsModule, IonButtons, 
+     IonBackButton, IonButton, IonImg, RouterLinkWithHref ]
   })
 export class IrelandNewsPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    addIcons({homeOutline});
+  }
 
   ngOnInit() {
   }
