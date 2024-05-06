@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Australia</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card [routerLink]="['/australia-news']" routerDirection="forward">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png" width="200"></ion-img>
+    <ion-card-header>
+      <ion-card-title>News</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card [routerLink]="['/australia-sports']" routerDirection="forward">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png" width="200"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Sport</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  
+</ion-content>

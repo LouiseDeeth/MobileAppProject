@@ -1,20 +1,45 @@
-<ion-header [translucent]="true">
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-menu>
+
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Two Isles News
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+<div class="banner">
+  <img src="assets/logo.png" alt="Logo" width="100%" >
+</div>
+<br>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card [routerLink]="['/ireland']" routerDirection="forward">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Ireland</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card [routerLink]="['/australia']" routerDirection="forward">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png" width="200"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Australia</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <br>
+    <h2>Weather forecast for {{myWeather}}:</h2>
+    <h2>{{ weatherData?.main }}</h2>
+
+    <ion-button [routerLink]="['/weather']">Change city</ion-button>
+
 </ion-content>

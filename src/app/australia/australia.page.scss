@@ -1,0 +1,34 @@
+ion-card {
+    max-width: 200px;
+    margin: 30px auto;
+    display: block;
+  }
+  
+  @media (min-width: 600px){
+    ion-card{
+      max-width: 400px;
+    }
+  }
+  
+  ion-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ion-card-title {
+    text-align: center;
+    font-size: large;
+  }
+  
+  ion-title {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  .tab-icon, ion-tab-button {
+    max-width: 70px;
+    max-height: 50px;
+    margin: 15px;
+  }

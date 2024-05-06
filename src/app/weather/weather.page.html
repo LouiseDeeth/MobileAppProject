@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Weather</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="myWeather">
+      <h2>Choose city: </h2>
+
+    <ion-item>
+      <ion-label>Galway</ion-label>
+      <ion-radio value="Galway"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dublin</ion-label>
+      <ion-radio value="Dublin"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Brisbane</ion-label>
+      <ion-radio value="Brisbane"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sydney</ion-label>
+      <ion-radio value="Sydney"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Perth</ion-label>
+      <ion-radio value="Perth"></ion-radio>
+    </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-button (click)="saveCity()">Save</ion-button>
+</ion-content>
