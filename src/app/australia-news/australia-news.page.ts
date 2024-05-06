@@ -26,4 +26,3 @@ export class AustraliaNewsPage implements OnInit {
   }
 }
 
-
