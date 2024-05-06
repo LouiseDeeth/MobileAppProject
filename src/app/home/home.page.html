@@ -11,9 +11,6 @@
     <ion-title>
       Two Isles News
     </ion-title>
-    <ion-buttons slot="end">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -37,9 +34,9 @@
     </ion-card-header>
   </ion-card>
   <br>
-    <h2>Weather forecast for {{myWeather}}:</h2>
-    <h2>{{ weatherData?.main }}</h2>
+
+    <h4>{{myWeather}} forecast - {{ weatherData?.main }}: {{ weatherData?.description }}</h4>
 
     <ion-button [routerLink]="['/weather']">Change city</ion-button>
-
+<br>
 </ion-content>

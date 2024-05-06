@@ -3,11 +3,7 @@ ion-card {
     margin: 30px auto;
     display: block;
   }
-@media (min-width: 600px){
-    ion-card{
-      max-width: 400px;
-    }
-  }
+
 ion-card-header {
     display: flex;
     flex-direction: column;

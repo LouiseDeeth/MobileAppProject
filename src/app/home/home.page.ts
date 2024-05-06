@@ -42,25 +42,25 @@ export class HomePage implements OnInit{
         case 'Dublin':
           this.dataService.getDublinWeatherData().subscribe(data => {
             console.log('Weather data for Dublin:', data); 
-            this.weatherData  = data.weather[1];
+            this.weatherData  = data.weather[0];
           });
           break;
         case 'Brisbane':
           this.dataService.getBrisbaneWeatherData().subscribe(data => {
             console.log('Weather data for Brisbane:', data); 
-            this.weatherData  = data.weather[2];
+            this.weatherData  = data.weather[0];
           });
           break;
         case 'Sydney':
           this.dataService.getSydneyWeatherData().subscribe(data => {
             console.log('Weather data for Sydney:', data); 
-            this.weatherData  = data.weather[3];
+            this.weatherData  = data.weather[0];
           });
           break;
         case 'Perth':
           this.dataService.getPerthWeatherData().subscribe(data => {
             console.log('Weather data for Perth:', data); 
-            this.weatherData  = data.weather[4];
+            this.weatherData  = data.weather[0];
           });
         break;
       }
