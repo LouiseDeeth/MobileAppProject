@@ -22,25 +22,15 @@
     "@angular/platform-browser-dynamic": "^17.0.2",
     "@angular/router": "^17.0.2",
     "@capacitor/app": "6.0.0",
-<<<<<<< HEAD
     "@capacitor/browser": "^6.0.0",
     "@capacitor/core": "6.0.0",
     "@capacitor/geolocation": "^6.0.0",
-=======
-    "@capacitor/core": "6.0.0",
->>>>>>> b0b13a5b409f78f5a6f538edbe791d0e0d2cf98b
     "@capacitor/haptics": "6.0.0",
     "@capacitor/keyboard": "6.0.0",
     "@capacitor/status-bar": "6.0.0",
     "@ionic/angular": "^8.0.0",
     "@ionic/storage-angular": "^4.0.0",
-<<<<<<< HEAD
     "ionicons": "^7.2.1",
-=======
-    "install": "^0.13.0",
-    "ionicons": "^7.2.1",
-    "npm": "^10.5.2",
->>>>>>> b0b13a5b409f78f5a6f538edbe791d0e0d2cf98b
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"

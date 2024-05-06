@@ -38,13 +38,26 @@
 
 ion-content {
     --background: #aae2f6; 
+    overflow-y: auto;
   }
 
 .ion-header {
   --background: #8dc9c;
-}
+  }
 
   .tab-icon {
     color: #fff;
   }
   
+  a {
+    color: dodgerblue; 
+    text-decoration: none; 
+  }
+  
+  a:hover {
+    text-decoration: underline; 
+  }
+
+  ion-list {
+    --background: #aae2f6;
+  }
