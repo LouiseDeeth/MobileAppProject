@@ -1,10 +1,40 @@
 ion-title {
-    text-align: center;
-    font-size: 25px;
-  }
-  
-  .tab-icon, ion-tab-button {
-    max-width: 70px;
-    max-height: 50px;
-    margin: 15px;
-  }
+  text-align: center;
+  font-size: 25px;
+}
+
+tab-icon, ion-tab-button {
+  max-width: 70px;
+  max-height: 50px;
+  margin: 15px;
+}
+
+ion-card {
+  display: flex; 
+  align-items: center;
+  justify-content: flex-start;
+  width: 95%; 
+  max-width: 800px; 
+  margin: 10px auto; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  background: #fff; 
+  border-radius: 10px;
+}
+
+ion-card-header {
+  padding: 5px;
+  flex-grow: 1; //how much the item will grom compared to other items in the container
+}
+
+ion-card-title {
+  font-size: 1.2em; 
+  margin-bottom: 5px; 
+  cursor: pointer; 
+}
+
+ion-img{
+  max-width: 100%;
+  height: auto; 
+  margin-right: 10px;
+}
+

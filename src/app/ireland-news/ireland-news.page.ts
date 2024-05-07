@@ -6,6 +6,7 @@ import { Router, RouterLinkWithHref } from '@angular/router';
 import { homeOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { DataService } from '../Services/data.service';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-ireland-news',
@@ -33,6 +34,15 @@ export class IrelandNewsPage implements OnInit {
       error => console.error('Error fetching Irish news: ', error)
     );
   }
+  
+  async openLink(url: string) {
+    console.log('Attempting to open link:', url);
+    try {
+      await Browser.open({ url });
+    } catch (error) {
+      console.error('Error opening the link: ', error);
+    }
+  }  
 
   goHome() {
     this.router.navigate(['/home']);  

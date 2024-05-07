@@ -1,8 +1,8 @@
 ion-card {
-    max-width: 200px;
-    margin: 30px auto;
-    display: block;
-  }
+  max-width: 200px;
+  margin: 70px auto;
+  display: block;
+}
   
   @media (min-width: 600px){
     ion-card{
@@ -24,7 +24,7 @@ ion-card {
   
   ion-title {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
   }
   
   .tab-icon, ion-tab-button {
