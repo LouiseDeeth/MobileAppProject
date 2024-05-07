@@ -11,32 +11,60 @@ import { DataService } from './Services/data.service';
 })
 
 export class AppComponent implements OnInit{
-  constructor(private dataService: DataService) {}
+  loading = false;
+  error: string | null = null; 
 
   irelandNews: any = [];
   australiaNews: any = [];
   irelandSports: any = [];
   australiaSports: any = [];
+
+  constructor(private dataService: DataService) {}
   
-  ngOnInit(){
-    this.dataService.getIrishNewsData().subscribe({
-      next: (data) => this.irelandNews = data.articles,  
-      error: (error) => console.error('Error fetching Irish news:', error)
-    });
+  ngOnInit() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.loading = true;
+    this.error = null;
+
+    this.dataService.getIrishNewsData().subscribe(
+      (data) => {
+        console.log(data); 
+        this.irelandNews = data.articles;
+      },
+      error => console.error('Error fetching Irish news: ', error)
+    );
 
     this.dataService.getIrishSportData().subscribe({
       next: (data) => this.irelandSports = data.articles, 
-      error: (error) => console.error('Error fetching Irish sports:', error)
+      error: (error) => {
+        console.error('Error fetching Irish sport:', error);
+        this.error = 'Failed to fetch Irish sport';
+        this.loading = false;
+      },
+      complete: () => this.loading = false
     });
 
     this.dataService.getAustraliaNewsData().subscribe({
       next: (data) => this.australiaNews = data.articles, 
-      error: (error) => console.error('Error fetching Australian news:', error)
+      error: (error) => {
+        console.error('Error fetching Australian news:', error);
+        this.error = 'Failed to fetch Australian news';
+        this.loading = false;
+      },
+      complete: () => this.loading = false
     });
 
     this.dataService.getAustraliaSportData().subscribe({
       next: (data) => this.australiaSports = data.articles, 
-      error: (error) => console.error('Error fetching Australian sports:', error)
+      error: (error) => {
+        console.error('Error fetching Australian sport:', error);
+        this.error = 'Failed to fetch Australian sport';
+        this.loading = false;
+      },
+      complete: () => this.loading = false
     });
   }
 }

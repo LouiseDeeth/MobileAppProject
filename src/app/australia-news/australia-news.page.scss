@@ -23,7 +23,7 @@ ion-card {
 
 ion-card-header {
   padding: 5px;
-  flex-grow: 1; 
+  flex-grow: 1; //how much the item will grom compared to other items in the container
 }
 
 ion-card-title {
@@ -34,7 +34,14 @@ ion-card-title {
 
 ion-img{
   max-width: 100%;
-  height: auto; 
+  height: 90%; 
   margin-right: 10px;
 }
 
+.clickable-title {
+  cursor: pointer;
+  color: blue; 
+  &:hover {
+  text-decoration: underline; 
+  }
+}

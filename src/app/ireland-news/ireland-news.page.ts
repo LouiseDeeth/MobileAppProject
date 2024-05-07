@@ -17,6 +17,7 @@ import { Browser } from '@capacitor/browser';
   })
 export class IrelandNewsPage implements OnInit {
   irelandNews:any =[];
+  url = "";
 
   constructor(
     private router: Router,
@@ -27,23 +28,28 @@ export class IrelandNewsPage implements OnInit {
 
   ngOnInit() {
     this.dataService.getIrishNewsData().subscribe(
-      (data)=>{
+      (data) => {
         this.irelandNews = data.articles;
         console.log(this.irelandNews);
       },
       error => console.error('Error fetching Irish news: ', error)
     );
   }
-  
-  async openLink(url: string) {
-    console.log('Attempting to open link:', url);
+
+  async openBrowser(url: string) {
+    if (!url) {
+      console.error('No URL provided');
+      return;
+    }
     try {
+      console.log('Opening URL:', url); 
       await Browser.open({ url });
     } catch (error) {
-      console.error('Error opening the link: ', error);
+      console.error('Error opening the link:', error);
     }
-  }  
-
+  }
+   
+  
   goHome() {
     this.router.navigate(['/home']);  
   }

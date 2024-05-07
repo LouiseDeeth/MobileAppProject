@@ -9,7 +9,7 @@ export class DataService {
   constructor(private http:HttpClient) { }
   
   getIrishNewsData():Observable<any>{
-    return this.http.get("https://newsapi.org/v2/top-headlines?country=ie&apiKey=28effd65f15d412db7549be57d32c3e2")
+    return this.http.get("https://newsapi.org/v2/top-headlines?country=ie&apiKey=28effd65f15d412db7549be57d32c3e2&limit=1")
   }
 
   getIrishSportData():Observable<any>{

@@ -34,7 +34,15 @@ ion-title {
 
   ion-img{
     max-width: 100%;
-    height: auto; 
+    height: 90%; 
     margin-right: 10px;
+  }
+  
+  .clickable-title {
+    cursor: pointer;
+    color: blue; 
+    &:hover {
+    text-decoration: underline; 
+    }
   }
   

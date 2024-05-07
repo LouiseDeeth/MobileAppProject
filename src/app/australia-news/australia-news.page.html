@@ -7,10 +7,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
+<ion-content>
+  <div *ngFor="let article of australiaNews">
+    <ion-card>
+      <div style="display: flex; align-items: center;">
+        <ion-img [src]="article.urlToImage || 'assets/logo2.png'" alt="News Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title (click)="openBrowser(article.url)" class="clickable-title">
+            {{ article.title }}
+          </ion-card-title>                  
+        </ion-card-header>
+      </div>
+    </ion-card>
+  </div>
 </ion-content>
 
+<!--tab bar at the bottom to navigate to Ireland page, Home and Australia page-->
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="ireland" routerLink="/ireland">

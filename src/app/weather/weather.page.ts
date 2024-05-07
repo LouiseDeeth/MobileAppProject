@@ -22,6 +22,8 @@ async ionViewWillEnter() {
   await this.storage.create();
   this.myWeather = await this.storage.get('weather');
 }
+
+//save which city to view on homepage
 async saveCity() {
   await this.storage.set('weather', this.myWeather)
   .then(

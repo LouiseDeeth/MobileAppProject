@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonHeader, IonMenu, IonToolbar, IonTitle, IonContent, IonImg, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonButtons, IonMenuButton, IonButton } from '@ionic/angular/standalone';
 import { Router, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Storage } from '@ionic/storage-angular';
 import { RouterLinkWithHref } from '@angular/router';
@@ -12,21 +12,29 @@ import { DataService} from '../Services/data.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  providers: [DataService],
-  imports: [IonHeader, IonMenu, IonToolbar, IonTitle, IonContent, FormsModule, CommonModule, IonImg, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, RouterModule, IonButtons, IonMenuButton, IonButton, RouterLinkWithHref ],
+  providers: [DataService, DatePipe],
+  imports: [IonHeader, IonMenu, IonToolbar, IonTitle, IonContent, FormsModule, CommonModule, IonImg, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, RouterModule, IonButtons, IonMenuButton, IonButton, RouterLinkWithHref],
 })
 
 export class HomePage implements OnInit{
     myWeather: string = "";
     weatherData: any;
+    currentTime: string = "";
  
-  constructor(private router: Router, private storage: Storage, private dataService: DataService) {} 
+  constructor(private router: Router, private storage: Storage, private dataService: DataService, private datePipe: DatePipe) {} 
 
     async ngOnInit() {
       await this.storage.create();
       this.updateWeather();
+      this.updateTime();
+      setInterval(() => this.updateTime(), 1000);
     }
 
+    updateTime() {
+      const formattedDate = this.datePipe.transform(new Date(), 'EEEE  dd MMM yyyy - HH:mm:ss');
+      this.currentTime = formattedDate ? formattedDate : '';  
+    }
+  
     async ionViewWillEnter() {
       await this.updateWeather();
     }
@@ -35,7 +43,7 @@ export class HomePage implements OnInit{
       this.myWeather = await this.storage.get('weather');
       this.loadWeather();
     }
-  
+
     loadWeather() {
       switch (this.myWeather) {
         case 'Galway':
