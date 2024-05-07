@@ -32,6 +32,10 @@ export class DataService {
     return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Dublin&appid=6a66416403ed8e5e6e762cb8c261f303")
   }
 
+  getCorkWeatherData():Observable<any>{
+    return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Cork&appid=6a66416403ed8e5e6e762cb8c261f303")
+  }
+
   getBrisbaneWeatherData():Observable<any>{
     return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Brisbane&appid=6a66416403ed8e5e6e762cb8c261f303")
   }
@@ -42,5 +46,12 @@ export class DataService {
 
   getPerthWeatherData():Observable<any>{
     return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Perth&appid=6a66416403ed8e5e6e762cb8c261f303")
+  }
+  getMelbourneWeatherData():Observable<any>{
+    return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Melbourne&appid=6a66416403ed8e5e6e762cb8c261f303")
+  }
+
+  getDarwinWeatherData():Observable<any>{
+    return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Darwin&appid=6a66416403ed8e5e6e762cb8c261f303")
   }
 }

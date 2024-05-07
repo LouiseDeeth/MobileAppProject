@@ -17,16 +17,21 @@ import { DataService} from '../Services/data.service';
 })
 
 export class HomePage implements OnInit{
-  constructor(private router:Router, 
-    private storage: Storage,
-    private dataService: DataService) {} 
-    
     myWeather: string = "";
     weatherData: any;
-    weather: any = [];
+ 
+  constructor(private router: Router, private storage: Storage, private dataService: DataService) {} 
 
     async ngOnInit() {
       await this.storage.create();
+      this.updateWeather();
+    }
+
+    async ionViewWillEnter() {
+      await this.updateWeather();
+    }
+  
+    async updateWeather() {
       this.myWeather = await this.storage.get('weather');
       this.loadWeather();
     }
@@ -45,6 +50,12 @@ export class HomePage implements OnInit{
             this.weatherData  = data.weather[0];
           });
           break;
+        case 'Cork':
+          this.dataService.getCorkWeatherData().subscribe(data => {
+            console.log('Weather data for Cork:', data); 
+            this.weatherData  = data.weather[0];
+          });
+          break;
         case 'Brisbane':
           this.dataService.getBrisbaneWeatherData().subscribe(data => {
             console.log('Weather data for Brisbane:', data); 
@@ -60,6 +71,18 @@ export class HomePage implements OnInit{
         case 'Perth':
           this.dataService.getPerthWeatherData().subscribe(data => {
             console.log('Weather data for Perth:', data); 
+            this.weatherData  = data.weather[0];
+          });
+        break;
+        case 'Melbourne':
+          this.dataService.getMelbourneWeatherData().subscribe(data => {
+            console.log('Weather data for Melbourne:', data); 
+            this.weatherData  = data.weather[0];
+          });
+          break;
+        case 'Darwin':
+          this.dataService.getDarwinWeatherData().subscribe(data => {
+            console.log('Weather data for Darwin:', data); 
             this.weatherData  = data.weather[0];
           });
         break;

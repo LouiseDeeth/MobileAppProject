@@ -1,36 +1,23 @@
-ion-card {
-    max-width: 200px;
-    margin: 30px auto;
-    display: block;
-  }
-
-ion-card-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-ion-card-title {
-    text-align: center;
-    font-size: large;
-  }
 ion-title {
     text-align: center;
     font-size: 25px;
   } 
-.tab-icon, ion-tab-button {
-    max-width: 70px;
-    max-height: 50px;
-    margin: 15px;
-  }
-ion-radio{
-    --color: white;
-    --color-checked: #3880ff;
+  ion-radio {
+    --color-checked: #3880ff; 
+    color: white;
   }
 ion-list{
-  --background: #aae2f6 !important;
+  background-color: #aae2f6;
+  max-width: 350px;
+  margin: auto;
+}
+ion-button{
+  display: block;
+  margin: 20px auto;
+  max-width: 80px;
+}
+h2{
+  text-align: center;
+  color: black;
 }
 
-ion-item{
-  size: 5px;
-}

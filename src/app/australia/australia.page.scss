@@ -1,5 +1,4 @@
 ion-card {
-<<<<<<< HEAD
     max-width: 200px;
     margin: 30px auto;
     display: block;
@@ -33,38 +32,3 @@ ion-card {
     max-height: 50px;
     margin: 15px;
   }
-=======
-  max-width: 200px;
-  margin: 30px auto;
-  display: block;
-}
-
-@media (min-width: 600px){
-  ion-card{
-    max-width: 400px;
-  }
-}
-
-ion-card-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-ion-card-title {
-  text-align: center;
-  font-size: large;
-}
-
-ion-title {
-  text-align: center;
-  font-size: 30px;
-}
-
-.tab-icon, ion-tab-button {
-  max-width: 70px;
-  max-height: 50px;
-  margin: 15px;
-}
->>>>>>> b0b13a5b409f78f5a6f538edbe791d0e0d2cf98b
