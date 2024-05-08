@@ -6,7 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { Storage } from '@ionic/storage-angular';
 import { RouterLinkWithHref } from '@angular/router';
 import { DataService} from '../Services/data.service';
+import { Geolocation
 
+ } from '@capacitor/geolocation';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -31,7 +33,7 @@ export class HomePage implements OnInit{
     }
 
     updateTime() {
-      const formattedDate = this.datePipe.transform(new Date(), 'EEEE  dd MMM yyyy - HH:mm:ss');
+      const formattedDate = this.datePipe.transform(new Date(), 'EEEE  dd MMM yyyy HH:mm:ss');
       this.currentTime = formattedDate ? formattedDate : '';  
     }
   
@@ -42,6 +44,11 @@ export class HomePage implements OnInit{
     async updateWeather() {
       this.myWeather = await this.storage.get('weather');
       this.loadWeather();
+    }
+
+    async getMyLocation() {
+      const coordinates = await Geolocation.getCurrentPosition();
+      return coordinates.coords;
     }
 
     loadWeather() {
@@ -94,6 +101,16 @@ export class HomePage implements OnInit{
             this.weatherData  = data.weather[0];
           });
         break;
+        case 'My Location':
+          this.getMyLocation().then(coords => {
+            this.dataService.getWeatherByLocation(coords.latitude, coords.longitude).subscribe(data => {
+              console.log('Weather data for My Location:', data); 
+              this.weatherData = data.weather[0];
+            });
+          }).catch(err => {
+            console.error('Error fetching location:', err);
+          });
+          break;
       }
     }
   }

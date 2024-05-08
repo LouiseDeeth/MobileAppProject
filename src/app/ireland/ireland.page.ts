@@ -14,7 +14,7 @@ import { homeOutline } from 'ionicons/icons';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, FormsModule, CommonModule, IonImg, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, RouterModule, IonButtons, IonBackButton, IonTabs, IonIcon, IonTabBar  ],
 })
 export class IrelandPage implements OnInit {
-  constructor(private router:Router) {
+  constructor(private router: Router) {
     addIcons({ 'home-outline': homeOutline });
   }
 

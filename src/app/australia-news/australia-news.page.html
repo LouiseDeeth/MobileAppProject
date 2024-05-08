@@ -9,11 +9,11 @@
 
 <ion-content>
   <div *ngFor="let article of australiaNews">
-    <ion-card>
+    <ion-card (click)="openBrowser(article.url)">      
       <div style="display: flex; align-items: center;">
         <ion-img [src]="article.urlToImage || 'assets/logo2.png'" alt="News Image"></ion-img>
         <ion-card-header>
-          <ion-card-title (click)="openBrowser(article.url)" class="clickable-title">
+          <ion-card-title style="cursor: pointer; color: blue;">
             {{ article.title }}
           </ion-card-title>                  
         </ion-card-header>
@@ -26,7 +26,7 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="ireland" routerLink="/ireland">
-      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200"></ion-img>
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" alt="Flag of Ireland"></ion-img>
     </ion-tab-button>
     
     <ion-tab-button tab="home" [routerLink]="['/home']">
@@ -34,7 +34,7 @@
     </ion-tab-button>
     
     <ion-tab-button tab="australia" routerLink="/australia">
-      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png"></ion-img>
+      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png" alt="Flag of Australia"></ion-img>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

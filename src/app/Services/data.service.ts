@@ -9,19 +9,19 @@ export class DataService {
   constructor(private http:HttpClient) { }
   
   getIrishNewsData():Observable<any>{
-    return this.http.get("https://newsapi.org/v2/top-headlines?country=ie&apiKey=28effd65f15d412db7549be57d32c3e2&limit=1")
+    return this.http.get("https://newsapi.org/v2/top-headlines?country=ie&pageSize=5&apiKey=28effd65f15d412db7549be57d32c3e2")
   }
 
   getIrishSportData():Observable<any>{
-    return this.http.get("https://newsapi.org/v2/top-headlines?country=ie&category=sports&apiKey=28effd65f15d412db7549be57d32c3e2")
+    return this.http.get("https://newsapi.org/v2/top-headlines?country=ie&category=sports&pageSize=5&apiKey=28effd65f15d412db7549be57d32c3e2")
   }
 
   getAustraliaNewsData():Observable<any>{
-    return this.http.get("https://newsapi.org/v2/top-headlines?country=au&apiKey=28effd65f15d412db7549be57d32c3e2")
+    return this.http.get("https://newsapi.org/v2/top-headlines?country=au&pageSize=5&apiKey=28effd65f15d412db7549be57d32c3e2")
   }
 
   getAustraliaSportData():Observable<any>{
-    return this.http.get("https://newsapi.org/v2/top-headlines?country=au&category=sports&apiKey=28effd65f15d412db7549be57d32c3e2")
+    return this.http.get("https://newsapi.org/v2/top-headlines?country=au&category=sports&pageSize=5&apiKey=28effd65f15d412db7549be57d32c3e2")
   }
 
   getGalwayWeatherData():Observable<any>{
@@ -53,5 +53,10 @@ export class DataService {
 
   getDarwinWeatherData():Observable<any>{
     return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=Darwin&appid=6a66416403ed8e5e6e762cb8c261f303")
+  }
+
+  getWeatherByLocation(lat: number, lon: number): Observable<any> {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6a66416403ed8e5e6e762cb8c261f303`;
+    return this.http.get(url);
   }
 }

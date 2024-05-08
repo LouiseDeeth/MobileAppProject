@@ -9,10 +9,9 @@ import { DataService } from './Services/data.service';
   standalone: true,
   imports: [IonApp, IonRouterOutlet, CommonModule, IonButtons],
 })
-
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   loading = false;
-  error: string | null = null; 
+  error: string | null = null;
 
   irelandNews: any = [];
   australiaNews: any = [];
@@ -20,7 +19,7 @@ export class AppComponent implements OnInit{
   australiaSports: any = [];
 
   constructor(private dataService: DataService) {}
-  
+
   ngOnInit() {
     this.fetchData();
   }
@@ -29,42 +28,60 @@ export class AppComponent implements OnInit{
     this.loading = true;
     this.error = null;
 
-    this.dataService.getIrishNewsData().subscribe(
-      (data) => {
-        console.log(data); 
+    this.dataService.getIrishNewsData().subscribe({
+      next: data => {
         this.irelandNews = data.articles;
       },
-      error => console.error('Error fetching Irish news: ', error)
-    );
+      error: error => {
+        console.error('Error fetching Irish news:', error);
+        this.error = 'Failed to fetch Irish news';
+        this.loading = false;
+      },
+      complete: () => {
+        this.loading = false;
+      }
+    });
 
     this.dataService.getIrishSportData().subscribe({
-      next: (data) => this.irelandSports = data.articles, 
-      error: (error) => {
+      next: data => {
+        this.irelandSports = data.articles;
+      },
+      error: error => {
         console.error('Error fetching Irish sport:', error);
         this.error = 'Failed to fetch Irish sport';
         this.loading = false;
       },
-      complete: () => this.loading = false
+      complete: () => {
+        this.loading = false;
+      }
     });
 
     this.dataService.getAustraliaNewsData().subscribe({
-      next: (data) => this.australiaNews = data.articles, 
-      error: (error) => {
+      next: data => {
+        this.australiaNews = data.articles;
+      },
+      error: error => {
         console.error('Error fetching Australian news:', error);
         this.error = 'Failed to fetch Australian news';
         this.loading = false;
       },
-      complete: () => this.loading = false
+      complete: () => {
+        this.loading = false;
+      }
     });
 
     this.dataService.getAustraliaSportData().subscribe({
-      next: (data) => this.australiaSports = data.articles, 
-      error: (error) => {
+      next: data => {
+        this.australiaSports = data.articles;
+      },
+      error: error => {
         console.error('Error fetching Australian sport:', error);
         this.error = 'Failed to fetch Australian sport';
         this.loading = false;
       },
-      complete: () => this.loading = false
+      complete: () => {
+        this.loading = false;
+      }
     });
   }
 }

@@ -25,17 +25,18 @@ export class AustraliaSportsPage implements OnInit {
     addIcons({homeOutline});
   }
 
-  ngOnInit() {
-    this.dataService.getAustraliaSportData().subscribe(
-      (data) => {
+  ngOnInit(): void {
+    this.dataService.getAustraliaSportData().subscribe({
+      next: (data) => {
         this.australiaSports = data.articles;
         console.log(this.australiaSports);
       },
-      error => console.error('Error fetching Australian sports: ', error)
-    );
+      error: (error) => console.error('Error fetching Australian sports: ', error)
+    });
   }
 
-  async openBrowser(url: string) {
+  async openBrowser(url: string): Promise<void> {
+    console.log('Attempting to open URL:', url);  
     if (!url) {
       console.error('No URL provided');
       return;
@@ -43,12 +44,9 @@ export class AustraliaSportsPage implements OnInit {
     try {
       console.log('Opening URL:', url); 
       await Browser.open({ url });
+      console.log('Browser opened successfully');  
     } catch (error) {
       console.error('Error opening the link:', error);
     }
-  }
-   
-  goHome() {
-    this.router.navigate(['/home']);  
-  }
+  }   
 }

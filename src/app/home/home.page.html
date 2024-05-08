@@ -10,23 +10,26 @@
 <div class="banner">
   <img src="assets/logo.png" alt="Logo" width="100%" >
 </div>
+
   <!--Link to Ireland page-->
   <ion-card [routerLink]="['/ireland']" routerDirection="forward">
-    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200"></ion-img>
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" width="200" alt="Flag of Ireland"></ion-img>
     <ion-card-header>
       <ion-card-title>Ireland</ion-card-title>
     </ion-card-header>
   </ion-card>
+
   <!--Link to Australia page-->
   <ion-card [routerLink]="['/australia']" routerDirection="forward">
-    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png" width="200"></ion-img>
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png" width="200" alt="Flag of Australia"></ion-img>
     <ion-card-header>
       <ion-card-title>Australia</ion-card-title>
     </ion-card-header>
   </ion-card>
+
+  <!--Show the weather of the city chosen in the weather page. Click change city to choose different city-->
+  <h4>- - - Weather - - -</h4>
+  <h5>{{myWeather}} - {{ weatherData?.main }}: {{ weatherData?.description }}</h5>
+  <ion-button [routerLink]="['/weather']">Change city</ion-button>
   <br>
-    <!--Show the weather of the city chosen in the weather page. Click chane city to choose different city-->
-    <h4>{{myWeather}} forecast - {{ weatherData?.main }}: {{ weatherData?.description }}</h4>
-    <ion-button [routerLink]="['/weather']">Change city</ion-button>
-<br>
 </ion-content>

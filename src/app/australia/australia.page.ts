@@ -15,14 +15,10 @@ import { addIcons } from 'ionicons';
 })
 export class AustraliaPage implements OnInit {
   constructor(private router: Router) { 
-    addIcons({'home-outline': homeOutline });
+    addIcons({ 'home-outline': homeOutline });
   }
 
   ngOnInit(): void {
-  }
-
-  goHome() {
-    this.router.navigate(['/home']);  
   }
 }
 

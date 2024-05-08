@@ -7,42 +7,47 @@
   </ion-toolbar>
 </ion-header>
 
+<!--Radio buttons to choose which weather to display on homepage-->
 <ion-content>
   <ion-list>
     <ion-radio-group [(ngModel)]="myWeather">
-      <h2>Choose city: </h2>
-    <ion-item>
-      <ion-label>Galway, Ireland</ion-label>
-      <ion-radio value="Galway"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Dublin, Ireland</ion-label>
-      <ion-radio value="Dublin"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Cork, Ireland</ion-label>
-      <ion-radio value="Cork"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Brisbane, Australia</ion-label>
-      <ion-radio value="Brisbane"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Sydney, Australia</ion-label>
-      <ion-radio value="Sydney"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Perth, Australia</ion-label>
-      <ion-radio value="Perth"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Melbourne, Australia</ion-label>
-      <ion-radio value="Melbourne"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>Darwin, Australia</ion-label>
-      <ion-radio value="Darwin"></ion-radio>
-    </ion-item>
+      <h2>Choose city:</h2>
+      <ion-item>
+        <ion-label>Galway, Ireland</ion-label>
+        <ion-radio value="Galway"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Dublin, Ireland</ion-label>
+        <ion-radio value="Dublin"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cork, Ireland</ion-label>
+        <ion-radio value="Cork"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Brisbane, Australia</ion-label>
+        <ion-radio value="Brisbane"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sydney, Australia</ion-label>
+        <ion-radio value="Sydney"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Perth, Australia</ion-label>
+        <ion-radio value="Perth"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Melbourne, Australia</ion-label>
+        <ion-radio value="Melbourne"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Darwin, Australia</ion-label>
+        <ion-radio value="Darwin"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>My Location</ion-label>
+        <ion-radio value="My Location"></ion-radio>
+      </ion-item>
     </ion-radio-group>
   </ion-list>
   <ion-button (click)="saveCity()">Save</ion-button>
