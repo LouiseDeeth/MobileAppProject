@@ -1,31 +1,48 @@
+/* General title styles */
 ion-title {
-    text-align: center;
-    font-size: 25px;
-  } 
-
-  ion-radio {
-    --color-checked: #3880ff; 
-    color: white;
-  }
-
-ion-list{
-  background-color: #7edaf9; 
-  max-width: 350px;
-  margin: auto;
+  text-align: center;
+  font-size: 25px;
 }
 
-ion-button{
-  display: block;
-  margin: 20px auto;
-  max-width: 80px;
-}
-
-h2{
+/* Styling for h2 headers */
+h2 {
   text-align: center;
   color: black;
 }
 
+/* Styling for ion-radio */
+ion-radio {
+  --color-checked: #3880ff;
+  color: white;
+}
+
+/* Styling for ion-list */
+ion-list {
+  background-color: #7edaf9;
+  max-width: 350px;
+  margin: auto;
+}
+
+/* Styling for ion-button */
 ion-button {
+  display: block;
+  margin: 20px auto;
+  max-width: 80px;
   border: 2px solid black;
-  box-shadow: 0 4px 8px rgba(0,0,0,50.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.509); 
+}
+
+/* Styling for tab icons and buttons */
+.tab-icon, 
+ion-tab-button {
+  max-width: 70px;
+  max-height: 50px;
+  margin: 15px;
+} 
+
+/* Styling for images in the tab bar */
+ion-tab-bar ion-img {
+  max-width: 100%;
+  height: 90%;
+  margin-right: 1px;
 }
