@@ -29,7 +29,14 @@
 
   <!--Show the weather of the city chosen in the weather page. Click change city to choose different city-->
   <h4>- - - Weather - - -</h4>
-  <h5>{{myWeather}} - {{ weatherData?.main }}: {{ weatherData?.description }}</h5>
+  <h5>
+    <div class="weather-display">
+      <span>{{myWeather}} - {{ weatherData?.description }} {{ weatherData?.temp }} °C</span>
+      <img [src]="weatherData?.icon" alt="Weather Icon" class="weather-icon">
+    </div>
+  </h5>  
+  <h5></h5>
+ 
   <ion-button [routerLink]="['/weather']">Change city</ion-button>
   <br>
 </ion-content>

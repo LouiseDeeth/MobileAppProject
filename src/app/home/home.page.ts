@@ -6,9 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { Storage } from '@ionic/storage-angular';
 import { RouterLinkWithHref } from '@angular/router';
 import { DataService} from '../Services/data.service';
-import { Geolocation
+import { Geolocation } from '@capacitor/geolocation';
 
- } from '@capacitor/geolocation';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -56,61 +55,115 @@ export class HomePage implements OnInit{
         case 'Galway':
           this.dataService.getGalwayWeatherData().subscribe(data => {
             console.log('Weather data for Galway:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
           break;
         case 'Dublin':
           this.dataService.getDublinWeatherData().subscribe(data => {
             console.log('Weather data for Dublin:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
           break;
         case 'Cork':
           this.dataService.getCorkWeatherData().subscribe(data => {
             console.log('Weather data for Cork:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
           break;
         case 'Brisbane':
           this.dataService.getBrisbaneWeatherData().subscribe(data => {
             console.log('Weather data for Brisbane:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
           break;
         case 'Sydney':
           this.dataService.getSydneyWeatherData().subscribe(data => {
             console.log('Weather data for Sydney:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
           break;
         case 'Perth':
           this.dataService.getPerthWeatherData().subscribe(data => {
             console.log('Weather data for Perth:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
-        break;
+          break;
         case 'Melbourne':
           this.dataService.getMelbourneWeatherData().subscribe(data => {
             console.log('Weather data for Melbourne:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
           break;
         case 'Darwin':
           this.dataService.getDarwinWeatherData().subscribe(data => {
             console.log('Weather data for Darwin:', data); 
-            this.weatherData  = data.weather[0];
+            const iconCode = data.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+            this.weatherData = {
+              description: data.weather[0].description,
+              temp: (data.main.temp - 273.15).toFixed(1),
+              icon: iconUrl 
+            };
           });
-        break;
+          break;
         case 'My Location':
           this.getMyLocation().then(coords => {
             this.dataService.getWeatherByLocation(coords.latitude, coords.longitude).subscribe(data => {
               console.log('Weather data for My Location:', data); 
-              this.weatherData = data.weather[0];
+              const iconCode = data.weather[0].icon;
+                    const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+                    this.weatherData = {
+                      description: data.weather[0].description,
+                      temp: (data.main.temp - 273.15).toFixed(1),
+                      icon: iconUrl 
+                    };
             });
           }).catch(err => {
             console.error('Error fetching location:', err);
           });
           break;
-      }
-    }
-  }
+              }
+            }
+          }
