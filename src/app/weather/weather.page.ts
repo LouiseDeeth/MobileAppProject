@@ -26,7 +26,12 @@ ngOnInit() {
 
 async ionViewWillEnter() {
   await this.storage.create();
-  this.myWeather = await this.storage.get('weather');
+  const storedWeather = await this.storage.get('weather');
+  if (storedWeather) {
+    this.myWeather = storedWeather;
+  } else {
+    this.myWeather = 'Galway'; 
+  }
 }
 
 async getCurrentLocation() {
